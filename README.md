@@ -17,7 +17,7 @@ To run the this example I will use the functions in `R_Scripts/functions.R` and 
 * Plant: plant species ID.
 * ID: visitor species ID.
 * Visits: number of visits recorded between the plant individual and the visitor species.
-* Week: number of the week.
+* Week: week number.
 
 In the figure below we show the information in `Example/example.csv`.
 ![](Example/Example_1.png)
