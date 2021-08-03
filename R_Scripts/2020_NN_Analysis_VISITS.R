@@ -58,6 +58,13 @@ G_F_list %>% group_by(ID) %>% count() %>% filter(n>1)
 
 fitness_orig <- fitness_final_aux %>% dplyr::left_join(G_F_list,by = "ID")
 
+fitness_orig %>% group_by(G_F) %>% count(wt=visits_GF) %>% arrange(desc(n))
+fitness_orig %>% group_by(Plant) %>% count(wt=visits_GF) %>% arrange(desc(n))
+fitness_orig %>% group_by(Plot) %>% count(wt=visits_GF) %>% arrange(desc(n))
+
+fitness_orig %>% filter(visits_GF>0) %>% ungroup() %>% select(Plot,Plant) %>% unique() %>% as_tibble() %>% 
+  group_by(Plot) %>% count() %>% arrange(Plot)
+
 #write_csv(fitness_final,"data_models_phenol_overlap_Random_GF.csv")
 
 # Turn ID, GF and Plot into factors

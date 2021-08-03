@@ -62,7 +62,7 @@ plant_sp_m <- modules_final %>% filter(type=="plant") %>% dplyr::select(Plot,mod
 
 plant_sp_m %>%  ggplot()+
   geom_histogram(aes(x=n))+theme_bw()+
-  facet_wrap(vars(Plot),nrow = 3,ncol = 3,labeller=labeller(Plot= plot_labs))+
+  facet_wrap(vars(Plot),nrow = 3,ncol = 3,labeller = labeller(Plot = plot_labs))+
   #ggtitle(paste0("Plot ",i)) +
   xlab("# Plant species per module") + ylab("# Modules") + theme(legend.position = "none")
 #Recoge a través de cuantas capas se extiende el módulo
@@ -139,6 +139,40 @@ b <- boot(plant_sp_m %>% ungroup() %>% filter(Plot==i) %>% select(n) %>% pull(),
           function(u,i) u[i], R = 1000)
 boot.ci(b, type = c("norm", "basic", "perc"),conf = .95)
 
+# Number of modules versus plot richness and number of interlinks
+
+data_modules <- tibble(modules = c(10,11,14,7,6,3,14,16,16),
+                       number_plant_ind = c(49,66,66,26,19,14,43,84,74),
+                       richness = c(4,5,5,2,2,2,6,6,8),
+                       interlinks = c(8,24,24,2,0,2,16,42,26)/number_plant_ind,
+                       average_weight = c(0.711375,0.7378333,0.6444583,0.656,0,0.656,0.734125,0.6350476,0.6830769))
+
+m_modules_richness <- lm(modules~richness, data_modules)
+summary(m_modules_richness)
+
+m_modules_interlinks <- lm(modules~interlinks, data_modules)
+summary(m_modules_interlinks)
+
+m_modules_average_weight <- lm(modules~average_weight, data_modules)
+summary(m_modules_average_weight)
+
+m_modules_richness_interlinks <- lm(modules~richness+interlinks, data_modules)
+summary(m_modules_richness_interlinks)
+
+
+# Get number of average phenological overlap from the interlinks of  a given plot
+library(igraph)
+plot_id <- 9
+file_i <- paste0("Processed_data/NN_networks/Plot_",plot_id,"_NN_intra_inter.rds")
+mult_i <- readRDS(file_i)
+weights_inter <- cbind( get.edgelist(mult_i) , round( E(mult_i)$weight, 3 ))  %>%
+  as_tibble() %>% rename(from = V1, to = V2, weight = V3) %>%
+  mutate(weight = as.numeric(weight)) %>%
+  separate(from,c("node_from","layer_from")," ") %>%
+  separate(to,c("node_to","layer_to")," ") %>% filter(layer_from != layer_to) %>%
+  select(weight) %>% pull()
+
+mean(weights_inter)
 
 
 # Number of poll species
