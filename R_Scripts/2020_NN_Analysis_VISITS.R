@@ -162,6 +162,7 @@ ggplot(fitness_orig_label_expl %>% filter(G_F!="None"), aes(fill=G_F, y=visits_G
   labs(x ="Plant species", y = "Number of visits",fill=NULL)+
   theme(legend.position="bottom",axis.text.x = element_text(angle = 45, hjust = 1))
 
+png("New_Figures/figA71.png", width=1476*2, height = 1476*2*800/600, res=300*2)
 ggplot(fitness_orig_label_expl %>% filter(G_F!="None"), aes(fill=G_F, y=visits_GF, x=Plant)) + 
   geom_bar(position="stack", stat="identity")+ theme_bw()+
   #scale_fill_brewer(palette = 'Paired')+ 
@@ -171,15 +172,17 @@ ggplot(fitness_orig_label_expl %>% filter(G_F!="None"), aes(fill=G_F, y=visits_G
   theme(legend.position="bottom")+
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))+
   theme(axis.text.x = element_text(face = "italic"))
+dev.off() 
 
 # Stacked + percent
+
 ggplot(fitness_orig %>% filter(G_F!="None"), aes(fill=G_F, y=visits_GF, x=Plant)) + 
   geom_bar(position="fill", stat="identity")+
   #scale_fill_brewer(palette = 'Paired')+ 
   scale_fill_manual(values = mycolors) +
   labs(x ="Plant species", y = "Percentage of visits",fill=NULL)+
   theme(legend.position="bottom")
-  
+ 
 
 
 ###########################
@@ -200,10 +203,10 @@ plants_PLOT_expl$Plant[plants_PLOT_expl$Plant == "SCLA"] <- "S. laciniata"
 plants_PLOT_expl$Plant[plants_PLOT_expl$Plant == "SOAS"] <- "S. asper"
 plants_PLOT_expl$Plant[plants_PLOT_expl$Plant == "SPRU"] <- "S. rubra"
 
-
+png("New_Figures/figA72.png", width=1476*2, height = 1476*2*600/800, res=300*2)
 ggplot(plants_PLOT_expl, aes(fill=Plant, y=n, x=Plot)) + 
   geom_bar(position="stack", stat="identity")+ theme_bw()+
   scale_fill_brewer(palette = 'Paired')+ 
   labs(x ="Plot", y = "Number of visited focal individuals",fill=NULL)+ theme(legend.position="bottom")+
   theme(legend.text = element_text(face = "italic"))
-
+dev.off()

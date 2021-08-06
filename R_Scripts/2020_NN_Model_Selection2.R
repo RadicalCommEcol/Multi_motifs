@@ -286,7 +286,7 @@ library(scales)
 
 #####################################
 dev.off()
-
+png("New_Figures/fig6.png", width=1961*2, height = 1961*2*800/600, res=300*2)
 par(mfrow = c(4,3),mar=c(4,4,2,1)+0.5)
 
 visreg(CHFU_NB_intercept_Plot_Plant,"homo_motif",xlab="Homospecific motifs",ylab="Seeds",
@@ -382,6 +382,7 @@ visreg(PUPA_NB_intercept_Plot_Plant,"Ratio",xlab="Among-layer\n centrality ratio
 points(Seeds_GF ~ Ratio, data = fitness_orig_PUPA, 
        col = rgb(red = 0, green = 0, blue = 0, alpha = 0.5),
        pch = 20) 
+
 
 # save 600 x 800
 
@@ -547,7 +548,7 @@ library(scales)
 
 #####################################
 dev.off()
-
+png("New_Figures/figA14.png", width=1961*2, height = 1961*2*1000/600, res=300*2)
 par(mfrow = c(5,3),mar=c(3.95,4,1,1))
 
 visreg(CHFU_NB_intercept_Plot_Plant_vist,"homo_motif",xlab="Homo triplet",ylab="Seeds",
