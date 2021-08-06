@@ -1,0 +1,66 @@
+node_id,module,species,layer_name,Plot,type
+1,1,C2 BEMA,BEMA,7,plant
+2,8,E6 BEMA,BEMA,7,plant
+3,6,C4 CETE,CETE,7,plant
+4,5,A4 CHFU,CHFU,7,plant
+5,5,E1 CHFU,CHFU,7,plant
+6,5,E4 CHFU,CHFU,7,plant
+7,5,F2 CHFU,CHFU,7,plant
+8,14,A1 LEMA,LEMA,7,plant
+9,3,A2 LEMA,LEMA,7,plant
+10,3,A3 LEMA,LEMA,7,plant
+11,4,A4 LEMA,LEMA,7,plant
+12,4,A5 LEMA,LEMA,7,plant
+13,11,A6 LEMA,LEMA,7,plant
+14,2,B1 LEMA,LEMA,7,plant
+15,13,B2 LEMA,LEMA,7,plant
+16,2,B3 LEMA,LEMA,7,plant
+17,2,B4 LEMA,LEMA,7,plant
+18,2,B5 LEMA,LEMA,7,plant
+19,2,B6 LEMA,LEMA,7,plant
+20,2,C1 LEMA,LEMA,7,plant
+21,2,C2 LEMA,LEMA,7,plant
+22,3,C3 LEMA,LEMA,7,plant
+23,2,C4 LEMA,LEMA,7,plant
+24,3,C5 LEMA,LEMA,7,plant
+25,3,C6 LEMA,LEMA,7,plant
+26,2,D1 LEMA,LEMA,7,plant
+27,12,D4 LEMA,LEMA,7,plant
+28,11,D5 LEMA,LEMA,7,plant
+29,7,D6 LEMA,LEMA,7,plant
+30,10,E1 LEMA,LEMA,7,plant
+31,4,E2 LEMA,LEMA,7,plant
+32,3,E4 LEMA,LEMA,7,plant
+33,6,E5 LEMA,LEMA,7,plant
+34,3,E6 LEMA,LEMA,7,plant
+35,4,F1 LEMA,LEMA,7,plant
+36,2,F2 LEMA,LEMA,7,plant
+37,3,F3 LEMA,LEMA,7,plant
+38,4,F4 LEMA,LEMA,7,plant
+39,3,F5 LEMA,LEMA,7,plant
+40,1,B2 MESU,MESU,7,plant
+41,1,C1 MESU,MESU,7,plant
+42,1,A2 SPRU,SPRU,7,plant
+43,9,F1 SPRU,SPRU,7,plant
+44,1,Musca_sp,BEMA,7,pollinator
+45,1,Sphaerophoria_scripta,BEMA,7,pollinator
+46,8,Episyrphus_balteatus,BEMA,7,pollinator
+47,6,Lasioglossum_malachurum,CETE,7,pollinator
+48,5,Ulidiidae,CHFU,7,pollinator
+49,14,Braconidae,LEMA,7,pollinator
+50,4,Psilothrix_viridicoerulea,LEMA,7,pollinator
+51,3,Brassicogethes_sp,LEMA,7,pollinator
+52,4,Oedemeridae,LEMA,7,pollinator
+53,11,Cryptocephalus_sp,LEMA,7,pollinator
+54,2,Andrena_humilis,LEMA,7,pollinator
+55,13,Malachius_bipustulatus,LEMA,7,pollinator
+56,6,Lasioglossum_malachurum,LEMA,7,pollinator
+57,7,Sphaerophoria_scripta,LEMA,7,pollinator
+58,12,Lagorina_sericea,LEMA,7,pollinator
+59,7,Nemotelus_sp,LEMA,7,pollinator
+60,10,Anastoechus_sp,LEMA,7,pollinator
+61,10,Cylindromyia_sp,LEMA,7,pollinator
+62,1,Musca_sp,MESU,7,pollinator
+63,1,Sphaerophoria_scripta,MESU,7,pollinator
+64,1,Sphaerophoria_scripta,SPRU,7,pollinator
+65,9,Lasioglossum_sp,SPRU,7,pollinator
